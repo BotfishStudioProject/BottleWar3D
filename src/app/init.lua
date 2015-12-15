@@ -7,7 +7,8 @@ CustomControl = require("app.controllers.CustomController")
 
 -------------游戏设置相关数据--------------------
 ---------------------------------------------
-
+ LevelValue = nil
+ 
  GameSet = {
      FirstGameValue = true,
 	 FirstGameKey = "First_Key",
@@ -28,6 +29,17 @@ CustomControl = require("app.controllers.CustomController")
 	 Main_Music = "Music/Star_Chaser.mp3",
 	 Boss_Music = "Music/Orbital Colossus_0.mp3"
 	 
+}
+
+EffectFile = {
+     ButtonClickStart = "EffectSound/explodeEffect.mp3",
+     ButtonClickCancel = "EffectSound/explodeEffect.mp3",
+     
+	 Boom_Effect = "EffectSound/boom.mp3",
+	 Boom2_Effect = "EffectSound/boom2.mp3",
+	 Hit_Effect = "EffectSound/hit.mp3",
+	 Explode_Effect = "EffectSound/explodeEffect.mp3"
+
 }
 
 

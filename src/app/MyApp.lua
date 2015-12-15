@@ -16,4 +16,12 @@ function MyApp:run()
     self:enterScene("MainScene")
 end
 
+function MyApp:onEnterBackground()
+    display.pause()
+end
+
+function MyApp:onEnterForeground()
+    display.resume()
+end
+
 return MyApp

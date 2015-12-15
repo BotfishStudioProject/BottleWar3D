@@ -1,7 +1,7 @@
 --
 -- Author: Your Name
 -- Date: 2015-12-13 16:21:03
---
+
 
 local GameScene = class("GameScene", function()
     return display.newPhysicsScene("GameScene")
@@ -92,26 +92,33 @@ function GameScene:ctor()
 end
 
 function GameScene:LoadUI()
+    local background = display.newSprite("HelloWorld.png", display.cx, display.cy)
+    :addTo(self,-1)
 
     local uiNode = cc.uiloader:load("GameScene/GameScene.csb")
-    self:addChild(uiNode)
+    self:addChild(uiNode,1)
 
-    local background = uiNode:getChildByName("Sprite_Back")
     local backbtn = uiNode:getChildByName("Button_Back")
+    local textlevel = uiNode:getChildByName("Text_Level")
+    
+    textlevel:setString(string.format("Level=%d", LevelValue))
 
-    CustomControl:SetPos(background)
     CustomControl:SetPos(backbtn)
+    CustomControl:SetPos(textlevel)
 
     backbtn:addTouchEventListener(function(sender,event)          
             --print("event="..event)
             --event是触摸类型，0,1,2,3分别是began，moved，ended，canceled
             
             if event == 0 then
+                CustomControl:playEffect(EffectFile.ButtonClickStart)
                 return true
             --elseif event == 1 then
             elseif event == 2 then
                 app:enterScene("MainScene", nil, "flipy")
-            --elseif event ==3 then              
+
+            elseif event ==3 then 
+                CustomControl:playEffect(EffectFile.ButtonClickCancel)            
             end        
         end)
 end

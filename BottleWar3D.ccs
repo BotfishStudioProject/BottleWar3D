@@ -1,0 +1,19 @@
+<Solution>
+  <PropertyGroup Name="BottleWar3D" Version="2.0.6.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="MainScene">
+          <Project Name="MainScene.csd" />
+        </Folder>
+        <Folder Name="LevelScene">
+          <Project Name="LevelScene.csd" />
+        </Folder>
+        <Folder Name="GameScene">
+          <Project Name="GameScene.csd" />
+        </Folder>
+        <Image Name="HelloWorld.png" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>
